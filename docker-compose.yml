@@ -1,7 +1,7 @@
 # Defines the local environment configuration for our application
 # See: DOCKER.md
 
-version: '1'
+version: '3'
 services:
   api:
     container_name: libxml-test
