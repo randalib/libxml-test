@@ -1,8 +1,3 @@
-const accessLog = require("simple-node-logger").createSimpleLogger({
-    logFilePath: "./log/access/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
-    timestampFormat: "YYYY-MM-DD HH:mm:ss"
-})
-
 /**
  *
  * @param req
@@ -22,7 +17,7 @@ module.exports = (req, res, next) => {
         statusCode: res.statusCode
     }
 
-    accessLog.info(
+    console.info(
         JSON.stringify({
             reqObject,
             resObject
