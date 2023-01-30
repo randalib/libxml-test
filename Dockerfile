@@ -1,15 +1,10 @@
-FROM node:alpine
+FROM node:14.16
+WORKDIR /app
+COPY package*.json ./
+RUN npm i
+COPY . .
+EXPOSE 5000
+CMD [ "npm", "start" ]
 
-RUN mkdir -p /usr/src/node-app && chown -R node:node /usr/src/node-app
-
-WORKDIR /usr/src/node-app
-
-COPY package.json yarn.lock ./
-
-USER node
-
-RUN yarn install --pure-lockfile
-
-COPY --chown=node:node . .
-
-EXPOSE 3000
+# sudo docker build --tag node-docker .
+# sudo docker run -p 5000:5000 node-docker

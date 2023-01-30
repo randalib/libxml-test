@@ -1,12 +1,5 @@
-# Dependencies
+.env
 node_modules
-
-# yarn error logs
-yarn-error.log
-
-# Environment varibales
-.env*
-!.env*.example
-
-# Code coverage
-coverage
+.idea
+site
+dist
