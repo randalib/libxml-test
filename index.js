@@ -1,5 +1,6 @@
 require("dotenv").config()
 require("express-async-errors")
+const XMLReader = require("./helpers/XMLReader");
 
 const accessLogMiddleware = require("./middlewares/logger.middleware")
 const routes = require("./routes/api")
@@ -16,5 +17,7 @@ app.use(express.json())
 app.use(accessLogMiddleware)
 
 app.use("/", routes)
+
+XMLReader.run();
 
 module.exports = app
