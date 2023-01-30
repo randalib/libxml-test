@@ -1,5 +1,9 @@
-FROM node:14.16
+FROM node:16-alpine
 WORKDIR /app
+
+RUN apk add --update --no-cache \
+    g++ make python3 
+
 COPY package*.json ./
 RUN npm i
 COPY . .
